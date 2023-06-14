@@ -25,10 +25,13 @@ int main()
     b->next = c;
     c->next = d;
 
-    cout << head->val << endl;
-    cout << head->next->val << endl;
-    cout << head->next->next->val << endl;
-    cout << head->next->next->next->val << endl;
+    Node *temp = head;
+
+    while (temp != NULL)
+    {
+        cout << temp->val << endl;
+        temp = temp->next;
+    }
 
     return 0;
 }
