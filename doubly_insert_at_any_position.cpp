@@ -90,6 +90,19 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
     tail = tail->next;
 }
 
+void delete_at_position(Node *head, int pos)
+{
+
+    Node *tmp = head;
+    for (int i = 1; i <= pos - 1; i++)
+    {
+        tmp = tmp->next;
+    }
+    Node *deletedNode = tmp->next;
+    tmp->next = tmp->next->next;
+    tmp->next->prev = tmp;
+    delete deletedNode;
+}
 int size_(Node *head)
 {
 
@@ -133,7 +146,7 @@ int main()
         insert_at_tail(head, tail, val);
     }
 
-    else if (pos >= size_(head))
+    else if (pos > size_(head))
     {
 
         cout << "Invalid" << endl;
@@ -141,9 +154,10 @@ int main()
     else
     {
 
-        insert_at_position(head, 2, 100);
+        insert_at_position(head, pos, val);
     }
 
+    delete_at_position(head, pos);
     print_Normal(head);
     print_reverse(tail);
 
