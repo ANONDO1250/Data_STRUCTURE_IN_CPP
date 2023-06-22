@@ -1,8 +1,8 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
 class Node
 {
+
 public:
     int val;
     Node *prev;
@@ -18,6 +18,7 @@ public:
 
 void insert_at_position(Node *&head, Node *&tail, int pos, int val)
 {
+
     Node *newNode = new Node(val);
 
     if (pos < 0)
@@ -42,22 +43,22 @@ void insert_at_position(Node *&head, Node *&tail, int pos, int val)
     }
     else
     {
-        Node *current = head;
-        int currentIndex = 0;
+        Node *cur = head;
+        int curIndex = 0;
 
-        while (current != NULL && currentIndex < pos)
+        while (cur != NULL && curIndex < pos)
         {
-            current = current->next;
-            currentIndex++;
+            cur = cur->next;
+            curIndex++;
         }
 
-        if (current == NULL && currentIndex != pos)
+        if (cur == NULL && curIndex != pos)
         {
             cout << "Invalid" << endl;
             return;
         }
 
-        if (current == NULL)
+        if (cur == NULL)
         {
             tail->next = newNode;
             newNode->prev = tail;
@@ -65,10 +66,10 @@ void insert_at_position(Node *&head, Node *&tail, int pos, int val)
         }
         else
         {
-            newNode->next = current;
-            newNode->prev = current->prev;
-            current->prev->next = newNode;
-            current->prev = newNode;
+            newNode->next = cur;
+            newNode->prev = cur->prev;
+            cur->prev->next = newNode;
+            cur->prev = newNode;
         }
     }
 
@@ -93,17 +94,17 @@ void insert_at_position(Node *&head, Node *&tail, int pos, int val)
 
 int main()
 {
-    int Q;
-    cin >> Q;
+    int q;
+    cin >> q;
 
     Node *head = NULL;
     Node *tail = NULL;
 
-    while (Q--)
+    while (q--)
     {
-        int X, V;
-        cin >> X >> V;
-        insert_at_position(head, tail, X, V);
+        int x, v;
+        cin >> x >> v;
+        insert_at_position(head, tail, x, v);
     }
 
     return 0;
