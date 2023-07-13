@@ -1,0 +1,1 @@
+{"name":"Local: stack_in_stl","url":"d:\\Data STRUCTURE in C++\\Stack__\\stack_in_stl.cpp","tests":[{"id":1689273143722,"input":"5\n10 20 30 40 50","output":"10 20 30 40 50"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Data STRUCTURE in C++\\Stack__\\stack_in_stl.cpp","group":"local","local":true}
