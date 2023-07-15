@@ -46,7 +46,7 @@ int main()
     }
     while (sta.empty() == false)
     {
-        cout << sta.top() << endl;
+        cout << sta.top() << " ";
         sta.pop();
     }
 

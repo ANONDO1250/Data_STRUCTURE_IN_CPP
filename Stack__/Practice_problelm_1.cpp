@@ -75,11 +75,11 @@ int main()
 
     if (areEqual)
     {
-        cout << "YES" << std::endl;
+        cout << "YES" << endl;
     }
     else
     {
-        cout << "NO" << std::endl;
+        cout << "NO" << endl;
     }
 
     return 0;
